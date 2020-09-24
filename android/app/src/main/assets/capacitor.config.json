@@ -1,0 +1,13 @@
+{
+  "appId": "com.vuejsrouter1.app",
+  "appName": "vuejsrouter1",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">vuejsrouter1</string>
+    <string name="title_activity_main">vuejsrouter1</string>
+    <string name="package_name">com.vuejsrouter1.app</string>
+    <string name="custom_url_scheme">com.vuejsrouter1.app</string>
+</resources>
