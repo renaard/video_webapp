@@ -1,20 +1,28 @@
 <template>
-<div>
-<!-- <h2>Hello  my name is danish seth</h2> -->
-<!-- <h3>{{this.$route.params.id}}</h3>
-<img :src="video.thumbnail" alt=""> -->
-
-<video-player 
- class="video-player-box"
+<!-- <div> -->
+ 
+  <v-container>
+    <v-row>
+<v-col md="9" cols="12">
+  <video-player 
  ref="videoPlayer"
 :options="playerOptions">
 </video-player>
-
+</v-col>
+<v-col md="3" cols="12">
 <h1>{{video.name}}</h1>
 <br>
 <div v-html="video.description"></div>
-</div>
-    
+<br>
+<v-btn color=#81C784 small @mousedown.stop
+>{{ video.name1 }}
+          </v-btn>
+
+
+</v-col>
+</v-row>
+    </v-container>
+   
 </template>
 
 <script>
@@ -41,6 +49,7 @@ export default {
           src:this.video. videoUrl
           }],
           poster:this.video.thumbnail,
+          fluid:true
         }
     }
     }

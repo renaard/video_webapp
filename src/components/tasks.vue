@@ -1,71 +1,75 @@
 <template>
-  <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <h1>Videos</h1>
-    <div class="video-container">
-      <div v-for="video in videos" :key="video.name">
+  <v-card width="1510px" hover>
+    <h2>Videos</h2>
+    <div class="home">
+      <div class="video-container">
+        <div v-for="video in videos" :key="video.name">
           <router-link :to="`/video/${video.id}`">
-          <!-- <router-link :to="{name:'video-watch',params :{id:video.id}}"> -->
-        <div class="video-box">
-          <img :src="video.thumbnail" />
-          <div>
-            <h3>{{ video.name }}</h3>
-            <div v-html="video.description"></div>
-          </div>
+            <v-card-actions>
+              <div class="video-box">
+                <v-card class=" mx-auto" max-width="400">
+                  <v-img
+                    :src="video.thumbnail"
+                    height="125"
+                    width="230px"
+                  ></v-img>
+                  <div>
+                    <br />
+                    <v-card-title>{{ video.name }}</v-card-title>
+                    <br />
+
+                    <br />
+                    <v-btn
+                      color="#81C784"
+                      small
+                      @mousedown.stop
+                      style="    margin-left: 10px;
+    margin-bottom: 10px;"
+                      >{{ video.name1 }}
+                    </v-btn>
+                  </div>
+                </v-card>
+              </div>
+            </v-card-actions>
+          </router-link>
         </div>
-        </router-link>
       </div>
-      
     </div>
-  </div>
+  </v-card>
 </template>
 
-
 <script>
-// import api from '@/services/api' ;
-
- export default {
-    name:"tasks" ,
-//     mounted() {
-// //       api().get('/videos').then((response)=>{
-// //       this.videos = response.data;
-      
-//        this.loadvideos();
-// //   })
-//     },
-//     methods: {
-//         async loadvideos(){
-//             let response=await api().get('/videos');
-//             this.videos=response.data;
-//         }
-    //  },
-    data() {
+export default {
+  name: "tasks",
+  data() {
     return {
-    //  videos: []
-    // to load the videos
-    videos:this.$store.state.videos
-    
-    }
-    } 
-}
+      videos: this.$store.state.videos,
+    };
+  },
+};
 </script>
 
-<style scoped lang="scss">
-.video-container{
-  .video-box{
+<style lang="scss">
+.video-container {
+  margin-left: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  .video-box {
     border: 1px solid black;
     border-radius: 10px;
     margin: 10px;
     padding: 10px;
+    @media only screen and (max-width: 500px) {
+      margin-left: 34px;
+    }
 
     text-align: left;
-      display: flex;
-      justify-content: flex-start;
-      img {
-        width: 200px;
-        padding: 10px;
-      }
+    display: flex;
+    justify-content: flex-start;
+    img {
+      width: 200px;
+      padding: 10px;
+    }
   }
 }
 </style>

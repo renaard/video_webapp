@@ -5,13 +5,14 @@
 </template>
 
 <script>
-import responsive from "./components/responsive.vue";
+
 
 
 export default {
-   responsive,
   name: 'App'
-  
+  // mounted() {
+  //   this.store.dispatch('loadVideos');
+  // },
 }
 </script>
 
